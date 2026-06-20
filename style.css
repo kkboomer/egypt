@@ -1,0 +1,154 @@
+/* --- Base Styles & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    border-top: 5px solid #2563eb; /* Blue accent at the very top */
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 400px;
+    /* REPLACE THIS URL with an actual image of Abu Simbel */
+    background-image: url('images/Abu_simel.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Main Layout Grid --- */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left column takes up 2/3, right takes 1/3 */
+    gap: 3rem;
+}
+
+/* --- Typography & Content Styles --- */
+article.content section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #1e293b;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* --- Media Embed Placeholders --- */
+.media-embed {
+    background-color: #e2e8f0;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem 0;
+    color: #64748b;
+}
+
+.caption {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.video-container {
+    /* Useful for responsive YouTube iframes later */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #cbd5e1;
+}
+
+/* --- Sidebar (Quick Facts) --- */
+.sticky-box {
+    position: sticky;
+    top: 2rem; /* Keeps it on screen when scrolling down */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sticky-box h3 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.sticky-box ul {
+    list-style: none;
+}
+
+.sticky-box li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+.sticky-box li strong {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.references li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stacks sidebar under content on small screens */
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
